@@ -109,7 +109,7 @@ resource "azurerm_lb_nat_rule" "main-lb" {
   protocol                       = "Tcp"
   frontend_port                  = 80
   backend_port                   = 80
-  frontend_ip_configuration_name = azurerm_lb.main-lb.frontend_ip_configuration[0].name
+  frontend_ip_configuration_name = "PublicIPAddress"
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "main-lb" {
