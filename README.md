@@ -1,8 +1,8 @@
-# Terraform Azurerm provider 
+# Terraform Azurerm provider Project.
 
 ## Introduction
 This repo containts my Terraform infrastucture as code that you can use to build
-multiple VM's, a load balancer with a custom Linux / Ubntu image
+multiple VM's, a load balancer with a customcl Linux / Ubntu image
 
 ## Getting Started
 To get started you will need the following.
