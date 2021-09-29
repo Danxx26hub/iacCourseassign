@@ -19,15 +19,29 @@ In order to use this code you will need the following
 * The Azurerm provider (Instructions how to install on right corner)
 * Azure CLI [Azurecli latest version](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 * Packer, to creat images [Packger latest version](https://www.packer.io)
+* the git client 
 
 ## Instructions
 
-***YOUR ASSEMBLY INSTRUCTIONS HERE***
+1. Clone this repo by typing "git clone https://github.com/Danxx26hub/iacCourseassign.git"
+2. You will have a folder called iacCourassign, cd into the this folder.
+3. find the Packer json file and enter your credentials for Azure.
+4. You may need to create a "service principal account" (MS docs)[https://docs.microsoft.com/en-us/cli/azure/ad/sp#az_ad_sp_create_for_rbac]
+5. You can find those using the Azure portal or the Azure CLI.
+6. Initialize Packer by typing "Packer init ." 
+7. Run "Packer build server.json" this will build the image in place it in Azure.
+8. Type "Terraform init" to initialize your environment.
+9. Type "Terraform plan -out project.out".
+10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
+11. This will do a "dry run" of the build process.
+12. Once you are satisfied with the output type "Terraform apply project.out", this will build the number of VM's of your choice, the Load Balancer and the Network Security group.
+13. Login to your Azure account and get your static IP, Enjoy.
 
-1. Place two (2) slices of bread on the plate
-2. place enough peanut butter on both slices of bread and spread with the knife, ensure the slices are completely covered. Clean knife with papertowel or napkin and then apply Jelly to one or both slices of the bread on top of peanut butter. Push both slices together.
+
+
 
 ## Output
-***YOUR EXPECTED OUTPUT HERE***
+You will have something like the image below, in my example I picked 3 VM's.
 
+![Azure network Topology 3 VM's and LB](azurenet.png)
 
