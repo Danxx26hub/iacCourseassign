@@ -2,7 +2,7 @@
 
 ## Introduction
 This repo containts my Terraform infrastucture as code that you can use to build
-multiple VM's, a load balancer with a customer Linux / Ubntu image
+multiple VM's, a load balancer with a custom Linux / Ubntu image
 
 ## Getting Started
 To get started you will need the following.
@@ -17,7 +17,7 @@ In order to use this code you will need the following
 
 * Terraform [Terraform latest version.](https://www.terraform.io)
 * The Azurerm provider (Instructions how to install on right corner)
-* Azure CLI [Azurecli later version](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+* Azure CLI [Azurecli latest version](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 * Packer, to creat images [Packger latest version](https://www.packer.io)
 
 ## Instructions
