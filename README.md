@@ -45,3 +45,7 @@ You will have something like the image below, in my example I picked 3 VM's.
 
 ![Azure network Topology 3 VM's and LB](azurenet.png)
 
+### Tag Policy Screenshot
+* Policy prevents resources from buing deployed wihtout tags.
+![policy tag screenshot](tagpolicy.png)
+
