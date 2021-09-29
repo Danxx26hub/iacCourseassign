@@ -16,7 +16,7 @@
     "image_offer": "UbuntuServer",
     "image_sku": "18.04-LTS",
 
-    "managed_image_resource_group_name": "067-resources",
+    "managed_image_resource_group_name": "{{ user `resource`}}",
     "managed_image_name": "assignmentimage",
 
 
