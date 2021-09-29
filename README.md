@@ -28,7 +28,7 @@ In order to use this code you will need the following
 3. find the Packer json file and enter your credentials for Azure.
 4. You may need to create a "service principal account" (MS docs)[https://docs.microsoft.com/en-us/cli/azure/ad/sp#az_ad_sp_create_for_rbac]
 5. You can find those using the Azure portal or the Azure CLI.
-6. Initialize Packer by typing "Packer init ." 
+6. Initialize Packer by typing "Packer init .", rename the .json file to "server.json".
 7. Run "Packer build -var 'resources=yourResource' server.json" this will build the image  (Note you will need to the -var allows you to set what resource group to put the image )
 8. Type "Terraform init" to initialize your environment.
 9. Type "Terraform plan -out project.out".
