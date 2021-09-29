@@ -29,7 +29,7 @@ In order to use this code you will need the following
 4. You may need to create a "service principal account" (MS docs)[https://docs.microsoft.com/en-us/cli/azure/ad/sp#az_ad_sp_create_for_rbac]
 5. You can find those using the Azure portal or the Azure CLI.
 6. Initialize Packer by typing "Packer init ." 
-7. Run "Packer build server.json" this will build the image in place it in Azure.
+7. Run "Packer build -var 'resources=yourResource' server.json" this will build the image  (Note you will need to the -var allows you to set what resource group to put the image in.)
 8. Type "Terraform init" to initialize your environment.
 9. Type "Terraform plan -out project.out".
 10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
