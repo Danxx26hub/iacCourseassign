@@ -58,11 +58,13 @@ In order to use this code you will need the following
     ![terraform inputs ](terraformPlan.png)
 
 
+10. This will do a "dry run" of the build process.
+    1. you will be presented with any changes that terraform will be making.
+    2. any addtions will have "+" symbols and changes or deletions will have "-" symbols
 
-10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
-11. This will do a "dry run" of the build process.
-12. Once you are satisfied with the output type "Terraform apply project.out", this will build the number of VM's of your choice, the Load Balancer and the Network Security group.
-13. Login to your Azure account and get your static IP, Enjoy.
+    ![Terraform changes](changes.png)
+11. Once you are satisfied with the output type "Terraform apply project.out", this will build the number of VM's of your choice, the Load Balancer and the Network Security group.
+12. Login to your Azure account and get your static IP, Enjoy.
 
 
 
