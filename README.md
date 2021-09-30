@@ -43,6 +43,9 @@ In order to use this code you will need the following
     ![Required Packer credentials](PackerID.png)
 6. Initialize Packer by typing "Packer init .", rename the .json file to "server.json".
 7. Run "Packer build -var 'resources=yourResource' server.json" this will build the image  (Note you will need to use the -var switch, this allows you to set what resource group to put the image )
+8. Once the image is built and stored in Azure you will see the following:
+![Packer build complete](packercomplete.png)
+
 8. Type "Terraform init" to initialize your environment.
 9. Type "Terraform plan -out project.out".
 10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
