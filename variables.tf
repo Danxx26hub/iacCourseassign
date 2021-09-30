@@ -18,8 +18,12 @@ variable "password" {
 
 variable "machines" {
   type        = number
-  description = "how many virtual machines would you like to build? (please select at least 1)"
+  description = "how many virtual machines would you like to build? (please select at least 2 but no more than 5)"
 
+  validation {
+    condition = var.machines > 2 && var.machines <= 5
+    error_message = "You must select at least 2 VM's but no more than 5 VM's!"
+  }
 
 }
 
