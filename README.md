@@ -47,7 +47,18 @@ In order to use this code you will need the following
 ![Packer build complete](packercomplete.png)
 
 8. Type "Terraform init" to initialize your environment.
-9. Type "Terraform plan -out project.out".
+9. Type "Terraform plan -out soution.plan".
+    1. You can modify any of the variables in the variables.tf file
+    to add or modify use the terraform "variable" block.
+    2. The default variables will ask you to pick between 2 and 5 VM's, I used
+    Terraform validation to ensure this stays between that range and will fail if not.
+    3. you will be asked to enter a password for the machines (not great security)
+    4. You will be asked to enter a resource group prifix BE SURE TO use the same as
+    you used in the Packer .json file.
+    ![terraform inputs ](terraformPlan.png)
+
+
+
 10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
 11. This will do a "dry run" of the build process.
 12. Once you are satisfied with the output type "Terraform apply project.out", this will build the number of VM's of your choice, the Load Balancer and the Network Security group.
