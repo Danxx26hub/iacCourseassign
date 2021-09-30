@@ -24,7 +24,7 @@ In order to use this code you will need the following
 ## Instructions
 
 1. Clone this repo by typing "git clone https://github.com/Danxx26hub/iacCourseassign.git"
-2. You will have a folder called iacCourassign, cd into the this folder.
+2. You will have a folder called iacCourseassign, cd into the this folder.
 3. find the Packer json file and enter your credentials for Azure.
 4. You will need to create a "Service Principal" account
 5. You can find those using the Azure portal or the Azure CLI.
@@ -57,7 +57,7 @@ In order to use this code you will need the following
     2. The default variables will ask you to pick between 2 and 5 VM's, I used
     Terraform validation to ensure this stays between that range and will fail if not.
     3. you will be asked to enter a password for the machines (not great security)
-    4. You will be asked to enter a resource group prifix BE SURE TO use the same as
+    4. You will be asked to enter a resource group prefix BE SURE TO use the same as
     you used in the Packer .json file.
     ![terraform inputs ](terraformPlan.png)
 
