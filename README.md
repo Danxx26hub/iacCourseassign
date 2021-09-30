@@ -62,7 +62,7 @@ In order to use this code you will need the following
     1. you will be presented with any changes that terraform will be making.
     2. any addtions will have "+" symbols and changes or deletions will have "-" symbols
 
-    ![Terraform changes](changes.png)
+    ![Terraform changes](terraformFinish.png)
 11. Once you are satisfied with the output type "Terraform apply project.out", this will build the number of VM's of your choice, the Load Balancer and the Network Security group.
 12. Login to your Azure account and get your static IP, Enjoy.
 
