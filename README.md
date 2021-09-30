@@ -19,17 +19,30 @@ In order to use this code you will need the following
 * The Azurerm provider (Instructions how to install on right corner)
 * Azure CLI [Azurecli latest version](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 * Packer, to creat images [Packger latest version](https://www.packer.io)
-* the git client 
+* A git client (to clone the repo) [git client](https://git-scm.com/downloads)
 
 ## Instructions
 
 1. Clone this repo by typing "git clone https://github.com/Danxx26hub/iacCourseassign.git"
 2. You will have a folder called iacCourassign, cd into the this folder.
 3. find the Packer json file and enter your credentials for Azure.
-4. You may need to create a "service principal account" (MS docs)[https://docs.microsoft.com/en-us/cli/azure/ad/sp#az_ad_sp_create_for_rbac]
+4. You will need to create a "Service Principal" account
 5. You can find those using the Azure portal or the Azure CLI.
+    1. to create SPN account do the following in the az cli.
+    2. Create an Azure Resource Group : az group create -n resourceGroup --tags Environment = Production -l region
+    3. you will need the following:
+        1. the clientd ID
+        2. client secret 
+        3. subscription ID
+    4. run this az cli command:
+    az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, tenant_id: tenant }"
+    5. Then get subscription ID by running the following command:
+    az account show --query "{ subscription_id: id }"
+    6. Be sure to safeguard these id's and not share them with anyone.
+    7. edit your "server.json" file and enter the three required id's
+    ![Required Packer credentials](PackerID.png)
 6. Initialize Packer by typing "Packer init .", rename the .json file to "server.json".
-7. Run "Packer build -var 'resources=yourResource' server.json" this will build the image  (Note you will need to the -var allows you to set what resource group to put the image )
+7. Run "Packer build -var 'resources=yourResource' server.json" this will build the image  (Note you will need to use the -var switch, this allows you to set what resource group to put the image )
 8. Type "Terraform init" to initialize your environment.
 9. Type "Terraform plan -out project.out".
 10. You will be asked how many VM's you want, The password to your VM's, a resource prefix and the username to use e.g. azureuser.
