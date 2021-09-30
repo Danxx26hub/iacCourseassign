@@ -60,13 +60,27 @@ resource "azurerm_network_security_group" "main-sg" {
     access                     = "Allow"
     direction                  = "Inbound"
     name                       = "internal-traffic"
-    priority                   = 100
+    priority                   = 101
     protocol                   = "Tcp"
     source_port_range          = "*"
     source_address_prefix      = "10.0.0.0/22"
     destination_port_range     = "*"
     destination_address_prefix = azurerm_network_interface.main[count.index].private_ip_address
   }
+  security_rule {
+    access                     = "Deny"
+    direction                  = "Inbound"
+    name                       = "Internet-traffic"
+    priority                   = 100
+    protocol                   = "*"
+    source_port_range          = "*"
+    source_address_prefix      = "Internet"
+    destination_port_range     = "0-65535"
+    destination_address_prefix = "10.0.0.0/22"
+
+
+  }
+
 }
 
 resource "azurerm_network_interface_security_group_association" "main-sg" {
