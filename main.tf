@@ -11,6 +11,7 @@ resource "azurerm_resource_group" "main" {
 
 }
 
+
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/22"]
@@ -133,7 +134,6 @@ resource "azurerm_network_interface_backend_address_pool_association" "main-lb" 
   network_interface_id    = element(azurerm_network_interface.main.*.id, count.index)
 }
 
-
 resource "azurerm_linux_virtual_machine" "main" {
   count                           = var.machines
   name                            = "${var.prefix}-${count.index + 1}-vm"
@@ -147,25 +147,18 @@ resource "azurerm_linux_virtual_machine" "main" {
   network_interface_ids = [
     azurerm_network_interface.main[count.index].id,
   ]
-
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
-  }
-
-  tags = {
-    environment = "Production"
-    "Tag Name"  = "yep I put a tag here"
-  }
+  source_image_id =  var.image_id
 
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
   }
 
-}
+  tags = {
+    environment = "Production"
+    "Tag Name"  = "yep I put a tag here"
+  }
+ }
 
 resource "azurerm_managed_disk" "datadisk" {
   name                 = "datadisk"
@@ -183,5 +176,3 @@ resource "azurerm_virtual_machine_data_disk_attachment" "datadisk" {
   lun                = 0
   caching            = "None"
 }
-
-
