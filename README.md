@@ -1,7 +1,7 @@
 # Terraform Azurerm provider Project.
 
 ## Introduction
-This repo containts my Terraform infrastucture as code that you can use to build
+This repo contains my Terraform infrastucture as code that you can use to build
 multiple VM's, a load balancer with a custom Linux / Ubuntu image
 
 ## Getting Started
