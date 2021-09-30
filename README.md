@@ -50,6 +50,10 @@ In order to use this code you will need the following
 9. Type "Terraform plan -out soution.plan".
     1. You can modify any of the variables in the variables.tf file
     to add or modify use the terraform "variable" block.
+        1. Notice that variables that are defined in the variables.tf file can be called in the main.tf file by using "var.machines" for example.
+        2. You can create your own variables and then call them in the main file.
+        3. Notice that I used a conditional in the variable file to restrict from 2 to 5 machines. you can change that.
+        
     2. The default variables will ask you to pick between 2 and 5 VM's, I used
     Terraform validation to ensure this stays between that range and will fail if not.
     3. you will be asked to enter a password for the machines (not great security)
