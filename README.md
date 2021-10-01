@@ -56,7 +56,8 @@ In order to use this code you will need the following
 
     2. The default variables will ask you to pick between 2 and 5 VM's, I used
     Terraform validation to ensure this stays between that range and will fail if not.
-    3. you will be asked to enter a password for the machines (not great security)
+    ![Terraform Validation code](TerraformValidation.png)
+    3. you will be asked to enter a password for the machines (not great security), but this is just an example. You can also do ssh public key encryption.
     4. You will be asked to enter a resource group prefix BE SURE TO use the same as
     you used in the Packer .json file.
     ![terraform inputs ](terraformPlan.png)
