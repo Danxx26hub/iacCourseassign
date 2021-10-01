@@ -18,7 +18,7 @@ In order to use this code you will need the following
 * Terraform [Terraform latest version.](https://www.terraform.io)
 * The Azurerm provider (Instructions how to install on right corner)
 * Azure CLI [Azurecli latest version](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-* Packer, to creat images [Packger latest version](https://www.packer.io)
+* Packer, to creat images [Packer latest version](https://www.packer.io)
 * A git client (to clone the repo) [git client](https://git-scm.com/downloads)
 
 ## Instructions
